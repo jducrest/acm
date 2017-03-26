@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+
+// Floyd Warshall rien a dire...
+
 using namespace std;
 
 vector<int> adj[101];
@@ -34,7 +37,7 @@ int main()
 			cin >> x >> y;
 			dist[x-1][y-1] = 1;
 		}
-
+		// Floyd Warshal
 		for(k=0;k<100;k++)
 			for(i=0;i<100;i++)
 				for(j=0;j<100;j++)

@@ -4,12 +4,13 @@
 
 using namespace std;
 
-vector<int> adj[100];
-int weight[100][100];
-vector<int> S;
-long dist[100];
+// j'ai essayé d'implementer un dijkstra avec file de priorité comme j'y passait trop de temps, 
+// depité j'ai fait bellman-ford horrible en O(n^3).
+// une catastrophe algorithmique...
 
-vector<int>::iterator it;
+
+int weight[100][100];
+long dist[100];
 
 
 int main()
@@ -22,7 +23,6 @@ int main()
 			cout << endl;
 		for(i=0;i<100;i++)
 		{
-			adj[i].clear();
 			dist[i] = 2147483647;
 			for(j=0;j<100;j++)
 				weight[i][j]=0;
@@ -36,7 +36,6 @@ int main()
 		{
 			cin >> x >> y >> w;
 			weight[y-1][x-1] = w;
-			adj[x-1].push_back(y-1);
 		}
 
 		//B-F

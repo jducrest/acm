@@ -2,8 +2,12 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
-// kruskal algo, rien a dire de special
 
+
+// kruskal algo
+// quand on fait un arbre couvrant sur N sommets, il faut N-1 aretes, ce que l'on fait ici c'est l'algo de kruskal et dès 
+// qu'on a (N-1)-S parties connexes couvertes, on complete avec les S connexion satellite, comme kruskal est glouton, on a
+// juste a renvoyer le poids de la dernière arete ajoutée
 
 using namespace std;
 unsigned int parent[200000];
@@ -128,34 +132,4 @@ int main()
 
 	}
 
-	/*
-	while(1)
-	{
-		cin >> M >> N; //nb of junctions / nb or roads
-		if ( M == 0 && N == 0)
-			break;
-		sum = 0;
-		edges.clear();
-		for(i=0;i<N;i++)
-		{
-			cin >> x >> y >> w;
-			e.x = x;
-			e.y = y;
-			e.w = w;
-			sum += w;
-			edges.push_back(e);
-		}
-		
-		kruskal(M);
-		
-		sum_min = 0;
-		for(i=0;i<min_set.size();i++)
-		{
-			sum_min+=min_set[i].w;
-		}
-		
-		cout << sum - sum_min << endl;
-
-	}
-	*/
 }

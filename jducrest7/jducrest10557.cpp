@@ -2,6 +2,12 @@
 #include <vector>
 #include <algorithm>
 
+// je fais un espece de bellman ford pour trouver la sortie et comme il peut y avoir des cycles, et que j'avais la flemme de faire
+// un algo qui trouve si les cycles sont vraiement sur le chemin de la sortie j'ai fait un truc beaucoup moins stylé:
+// faire tourner bellman ford 1000000 fois pour etre sur que si ya un cycle, on l'a pris assez de fois pour arriver a la sortie...
+
+
+
 using namespace std;
 
 int power[101];
@@ -69,21 +75,16 @@ int main()
 			}
 			
 		}
-		/*
-		for(n=1;n<=N;n++)
-			cout << power[n] << " ";
-		cout << endl << endl;
-
-		for(i = 0;i<edges.size();i++)
-			cout << "s " << edges[i].start << " e " << edges[i].end << endl;
-		*/
 
 		//B-F
 		dist[1] = 100;
 		for(k=0;k<100000;k++)
+		{
 			for(it = edges.begin();it != edges.end();it++)
 				relax(it->start,it->end);
-		
+			if(dist[N]>0)
+				break;
+		}
 		if(dist[N]>0)
 			cout << "winnable" << endl;
 		else
