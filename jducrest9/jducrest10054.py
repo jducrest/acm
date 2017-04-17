@@ -1,3 +1,9 @@
+# mon code marche sur les exemples simples du probleme mais depasse le temps impartit sur le site.
+# je n'ai pas eut le temps de le recoder en C++
+# je fait juste un dfs pour trouver des cycles et des que j'en trouve un 
+# j'ajoute a ce cycle des petits cycles pour utiliser toutes les beads 
+
+
 import sys
 
 debug = False
