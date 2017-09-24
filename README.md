@@ -1,0 +1,3 @@
+# acm
+
+Some exercices for an ACM course... some of it works, some of it maybe not who knows...
